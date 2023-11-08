@@ -1,0 +1,10 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+{% for questiontext in questiontext_list %}
+<div class="questiontext-entry">
+   <h3>{{ questiontext.question_text }}:</h3>
+</div>
+{% endfor %}
+{% endblock content %}
