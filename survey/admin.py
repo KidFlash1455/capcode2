@@ -3,14 +3,7 @@ from .models import QuestionResponse, QuestionText, QuestionChoice
 
 
 class QuestionResponseAdmin(admin.ModelAdmin):
-    list_display = [
-        "pk",
-        "first_name",
-        "last_name",
-        "suffix",
-        "email",
-        "status",
-    ]
+    list_display = [field.name for field in QuestionResponse._meta.get_fields()]
 
 
 class QuestionTextAdmin(admin.ModelAdmin):

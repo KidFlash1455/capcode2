@@ -1,14 +1,110 @@
 <form method="POST" action="{% url 'survey' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <fieldset> 
+        <!-- Contact Information -->  
         <legend><h1>Contact Information:</h1></legend>
-        {% for field in form %}
+        <div class = "fieldWrapper">
+            {{ form.first_name.label_tag}}
+            <br>
+            {{ form.first_name }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.last_name.label_tag}}
+            <br>
+            {{ form.last_name }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.suffix.label_tag}}
+            <br>
+            {{ form.suffix }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.email.label_tag}}
+            <br>
+            {{ form.email }}
+        </div>      
+        <div class = "fieldWrapper">
+            {{ form.status.label_tag}}
+            <br>
+            {{ form.status }}
+        </div>  
+        <div class = "fieldWrapper">
+            {{ form.status_desc.label_tag}}
+            <br>
+            {{ form.status_desc }}
+        </div>
+        {% comment %} {% for field in form %}
             <div class="form-group">
                 {{ field.label_tag }}
                 <br>
                 {{ field }}
             </div>
-        {% endfor %}
+        {% endfor %} {% endcomment %}
+    </fieldset>
+    <fieldset>
+        <legend><h1>Detailed Information:</h1></legend>
+        <div class = "fieldWrapper">
+            {{ form.university.label_tag}}
+            <br>
+            {{ form.university }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.university_desc.label_tag}}
+            <br>
+            {{ form.university_desc }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.department.label_tag}}
+            <br>
+            {{ form.department }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.university_title.label_tag}}
+            <br>
+            {{ form.university_title }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.university_link.label_tag}}
+            <br>
+            {{ form.university_link }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.semantic_scholar.label_tag}}
+            <br>
+            {{ form.semantic_scholar }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.google_scholar.label_tag}}
+            <br>
+            {{ form.google_scholar }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.research_tagline.label_tag}}
+            <br>
+            {{ form.research_tagline }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.research_description.label_tag}}
+            <br>
+            {{ form.research_description }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.research_count.label_tag}}
+            <br>
+            {{ form.research_count }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.research_example.label_tag}}
+            <br>
+            {{ form.research_example }}
+        </div>
+        <div class = "fieldWrapper">
+            {{ form.data_science_class_1.label_tag}}
+            <br>
+            Class 1: {{ form.data_science_class_1 }}
+            Class 2: {{ form.data_science_class_2 }}
+            Class 3: {{ form.data_science_class_3 }}
+        </div>
     </fieldset>
     <input type="submit" value="Submit">
 </form>
