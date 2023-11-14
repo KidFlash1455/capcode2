@@ -45,8 +45,8 @@ class QuestionChoice(models.Model):
         on_delete=models.CASCADE,
         default="Default",
     )
-    choice = models.TextField(max_length=1000, name="choice", default="default")
     position = models.IntegerField("position")
+    choice = models.CharField(max_length=500, name="choice", default="default")
 
     def __str__(self):
         return self.choice
