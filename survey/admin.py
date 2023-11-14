@@ -10,7 +10,6 @@ class QuestionTextAdmin(admin.ModelAdmin):
     list_display = [
         "pk",
         "question_title",
-        "question_text",
     ]
 
 

@@ -2,12 +2,6 @@ from django.db import models
 
 
 # Create your models here.
-class QuestionText(models.Model):
-    question_text = models.TextField(max_length=500, default="Default")
-    question_title = models.CharField(max_length=200, default="Default")
-
-    def __str__(self):
-        return self.question_title
 
 
 class QuestionResponse(models.Model):
@@ -34,8 +28,15 @@ class QuestionResponse(models.Model):
     data_science_class_2 = models.CharField(max_length=100, default="Default")
     data_science_class_3 = models.CharField(max_length=100, default="Default")
 
-    # def __str__(self):
-    #     return f"{self.first_name} {self.last_name} "
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} "
+
+
+class QuestionText(models.Model):
+    question_title = models.CharField(max_length=200, default="Default")
+
+    def __str__(self):
+        return self.question_title
 
 
 class QuestionChoice(models.Model):
