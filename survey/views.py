@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.http import HttpResponseRedirect, HttpResponse
-
+from django.shortcuts import get_object_or_404, render
 from .models import QuestionResponse, QuestionText
 from .forms import Survey
 
